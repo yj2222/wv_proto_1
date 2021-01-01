@@ -502,6 +502,7 @@ h3::after{
 ---------------------------------- */
 .sec-baf{
   padding: 0 10px;
+  margin-bottom: 100px;
 }
 .sec-baf h3{
   padding: 0;
@@ -569,6 +570,69 @@ h3::after{
 .sec-baf__fbx figcaption{
   line-height: 1.5;
 }
+/* section news
+---------------------------- */
+.sec-news{
+  padding: 50px 10px;
+}
+@media screen and (min-width: 768px){
+  .sec-news{
+    padding: 50px 20px;
+  }
+}
+.sec-news h3{
+  padding: 0;
+  margin: 0 0 10px;
+  font-size: 30px;
+  letter-spacing: 5px;
+  color: #000;
+}
+.sec-news h3::after{
+  display: none;
+}
+.sec-news span{
+  display: block;
+  margin-bottom: 50px;
+  font-size: 16px;
+  color: #aaa;
+  letter-spacing: 3px;
+}
+.sec-news ul{
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.sec-news li{
+  margin-bottom: 20px;
+  font-size: 16px;
+  display: flex;
+}
+.sec-news time{
+  /* aタグのunderline(after)の位置調整のため */
+  line-height: 1.5;
+  margin-right: 20px;
+  color: #bbb;
+}
+.sec-news li a{
+  /* aタグのunderline(after)の位置調整のため */
+  line-height: 1.5;
+  transition: .5s;
+}
+.sec-news li a:hover{
+  color: var(--sec-msg-accent);
+}
+.sec-news li a::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background: var(--sec-msg-accent);
+  transition: .5s;
+}
+.sec-news li a:hover::after{
+  width: 100%;
+}
+
 /* footer
 ----------------------------------- */
 footer{
