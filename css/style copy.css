@@ -1,0 +1,241 @@
+@charset "UTF-8";
+/* reset */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Noto Sans JP', sans-serif; */
+  font-family: 'Noto Serif JP', serif;
+  line-height: 1.0;
+}
+html{
+  font-size: 62.5%; /* 12.5px */
+}
+body{ 
+  font-size: 1.6rem; /* 20px */
+}
+ul{
+  list-style: none;
+}
+a{
+  color: inherit;
+  text-decoration: none;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  border: none;
+  vertical-align: bottom;
+}
+/* common */
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 0.5em;
+}
+/* header
+----------------------------- */
+header{
+  padding: 3em 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+header > .container{
+  display: flex;
+  align-items: flex-end;
+}
+header .title{
+  overflow: hidden;
+  text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff, 0 0 3px #fff;
+}
+@keyframes feedin-word{
+  100%{
+    left: 0;
+  }
+}
+/* h1, header p, nav, h2, .key-vis p:first-of-type{
+  position: relative;
+  left: -200%;
+  animation: feedin-word 1s 3.1s;
+  animation-fill-mode: forwards;
+} */
+h1{
+  font-size: 1.9em;
+}
+header p{
+  font-size: 0.8em;
+}
+/* navigation */
+nav.pc-nav{
+  display: none;
+}
+nav.pc-nav a{
+  font-size: 0.8em;
+  color: #a9a9a9;
+  text-shadow: 1px 1px 1px #fff;
+  transition: .3s;
+}
+nav.pc-nav a:hover{
+  color: #000;
+}
+@media screen and (min-width: 768px){
+  nav.pc-nav{
+    display: block;
+  }
+  nav.pc-nav ul{
+    display: flex;
+  }
+  nav.pc-nav li{
+    margin-left: 1em;
+  }
+}
+/* side navigation bars
+----------------------------- */
+.bars{
+  display: flex;
+  justify-content: flex-end;
+}
+.bars p{
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  position: fixed;
+  top: 5px;
+  z-index: 9999;
+}
+@media screen and (min-width: 768px){
+  .bars{
+    display: none;
+  }
+}
+/* key visual
+----------------------------- */
+.key-vis{
+  display: block;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px){
+  .key-vis{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+.key-vis.container{
+  padding-right: 0;
+}
+@keyframes bg-position{
+  0%{
+    background-position: center;
+  }
+  100%{
+    background-position: left;
+  }
+}
+.key-vis .bg{
+  background: url(../img/original/bg.jpg) left/cover;
+  width: 80%;
+  height: 50vh;
+  animation: bg-position 10s;
+}
+.key-vis section{
+  width: 20%;
+  padding: 200px 0;
+}
+@media screen and (min-width: 768px){
+  .key-vis{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+h2{
+  font-size: 2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff, 0 0 3px #fff;
+}
+.key-vis p{
+  font-size: 0.8em;
+  margin-bottom: 20px;
+  white-space: nowrap;
+  text-shadow: 1px 1px 1px #fff, -1px -1px 1px #fff;
+}
+.key-vis p:first-of-type{
+  display: none;
+}
+.key-vis p:nth-of-type(2){
+  line-height: 1.6;
+}
+.key-vis p:last-of-type{
+  width: 300px;
+  position: relative;
+}
+@keyframes bg-color{
+  100%{
+    background: #000;
+    color: #fff;  
+  }
+}
+.key-vis a{
+  display: block;
+  line-height: 70px;
+  text-align: center;
+  text-shadow: none;
+  /* box-shadow: 1px 1px 5px #fff, -1px -1px 5px #fff, 0 0 10px #fff; */
+  color: transparent;
+  transition: .5s;
+  animation: bg-color 1s 3.1s;
+  animation-fill-mode: forwards;
+}
+@keyframes border-anime{
+  100%{
+    width: 100%;
+    height: 100%;
+  }
+}
+.key-vis a::before, .key-vis a::after{
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  transition: 1s;
+  position: absolute;
+  animation: border-anime 2s 1s;
+  animation-fill-mode: forwards;
+}
+:root{
+  --border-propety: 2px solid #000;
+}
+.key-vis a::before{
+  border-right: var(--border-propety);
+  border-top: var(--border-propety);
+  top: -2px;
+  right: -2px;
+}
+.key-vis a::after{
+  border-left: var(--border-propety);
+  border-bottom: var(--border-propety);
+  left: 0;
+  bottom: 0;
+}
+
+@media screen and (min-width: 768px){
+  .key-vis .bg{
+    width: 60%;
+  }
+  .key-vis section{
+    width: 40%;
+  }
+  h2{
+    font-size: 3em;
+  }
+  .key-vis p:first-of-type{
+    display: block;
+  }
+  .key-vis p:nth-of-type(2){
+    display: none;
+  }
+}

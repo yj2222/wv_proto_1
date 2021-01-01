@@ -1,0 +1,58 @@
+* {
+  margin:0;
+  padding:0;
+  outline:none;
+  list-style:none;
+  text-decoration:none;
+  box-sizing:border-box;
+  color:#000;
+  background: transparent;
+  border:none;
+}
+body {
+  background: #202020;
+}
+header, footer{
+  height: 200vh;
+  color: white;
+}
+.wrap {
+  /* background-repeat: no-repeat;
+  background-size: cover; */
+  /* background: linear-gradient(to bottom, red, blue, green); */
+  /* width: 100%; */
+}
+section {
+  padding: 100px;
+  height: 200vh;
+  background-image: url(https://images.unsplash.com/photo-1450101215322-bf5cd27642fc?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=3f46f8ce349be6232d8759a6c8416d37);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+section:nth-of-type(2) {
+  background-image: url(https://images.unsplash.com/photo-1443916765281-9937110585db?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=78640ffe8327b5e45f62c5258bc1a843);
+}
+section:nth-of-type(3) {
+  background-image: url(https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=21ce0991c656c3dc50f55b4ecc81d30d);
+}
+.sticky{
+  position: sticky;
+  top: 10%;
+}
+.sticky__parent{
+}
+.sticky__parent__child{
+  overflow: hidden;
+}
+.sticky__parent__child img{
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  float: left;
+  margin-right: 50px;
+}
+h2{
+  color: white;
+}
